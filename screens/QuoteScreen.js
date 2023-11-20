@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import React, { useState, useEffect, useContext } from 'react';
 import { Ionicons } from "@expo/vector-icons";
-import InfoButton from '../components/InfoButton';
+import logo from '../assets/got-quotes-api.png';
 import { HouseContext } from '../data/HouseContext';
 
 export default function QuoteScreen({ navigation }) {
@@ -39,10 +39,10 @@ export default function QuoteScreen({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.topContainer}>
-      <Button
-              title="Fetch 5 random quotes"
-              onPress={() => fetchQuoteHandler(false)}
-            />
+        <Button
+          title="Fetch 5 random quotes"
+          onPress={() => fetchQuoteHandler(false)}
+        />
         {isInitialLoading ? (
           <View style={styles.topContainer}>
             <Text>Loading...</Text>
@@ -59,6 +59,9 @@ export default function QuoteScreen({ navigation }) {
             <Text>Quote 5: {quoteData[4].sentence}</Text>
           </View>
         )}
+        <View>
+          <Image source={logo} style={{ resizeMode: "center" }} />
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );

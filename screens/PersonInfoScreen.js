@@ -32,7 +32,7 @@ export default function PersonInfoScreen() {
       );
       response = await response.json();
       setPersonData(response)
-      console.log(personData.name);
+      // console.log(personData[0].name);
     } catch (err) {
       Alert.alert("Something went wrong!", err.message, [{ title: "Ok" }]);
     }
@@ -48,8 +48,9 @@ export default function PersonInfoScreen() {
         <ActivityIndicator />
       ) : (
         <View style={styles.bottomContainer}>
-          <Text>Character from House:</Text>
-          <Text>{personData.house}</Text>
+          <Text>Character: {personData[0].name} </Text>
+          <Text>from: {personData[0].house.name}</Text>
+          <Text>has these quotes: {personData[0].quotes}</Text>
         </View>
       )}
     </TouchableWithoutFeedback>

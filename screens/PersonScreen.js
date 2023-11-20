@@ -16,13 +16,13 @@ import {
 import React, { useState, useEffect, useContext } from 'react';
 import { Ionicons } from "@expo/vector-icons";
 import InfoButton from '../components/InfoButton';
-import { HouseContext } from '../data/HouseContext';
+import { PersonContext } from '../data/PersonContext';
 
 export default function PersonScreen({ navigation }) {
   const [data, setData] = useState();
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [clickedPerson, setClickedPerson] = useContext(HouseContext);
+  const [clickedPerson, setClickedPerson] = useContext(PersonContext);
 
   useEffect(() => {
 
