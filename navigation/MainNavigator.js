@@ -43,8 +43,8 @@ export default MainNavigator = () => {
           inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen name="Persons" component={PersonNavigator} />
         <Tab.Screen name="Houses" component={HomeNavigator} />
+        <Tab.Screen name="Persons" component={PersonNavigator} />        
         <Tab.Screen name="Quotes" component={QuoteNavigator} />
       </Tab.Navigator>
     </NavigationContainer>
