@@ -38,7 +38,8 @@ export default function QuoteScreen({ navigation }) {
   }
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={styles.topContainer}>
+      <View style={styles.container}>
+
         <Button
           title="Fetch 5 random quotes"
           onPress={() => fetchQuoteHandler(false)}
@@ -59,10 +60,11 @@ export default function QuoteScreen({ navigation }) {
             <Text>Quote 5: {quoteData[4].sentence}</Text>
           </View>
         )}
-        <View>
+        <View style={styles.logoContainer}>
           <Image source={logo} style={{ resizeMode: "center" }} />
         </View>
       </View>
+      
     </TouchableWithoutFeedback>
   );
 }
@@ -72,16 +74,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   topContainer: {
-    width: "100%",
     alignItems: "center",
-    padding: 50,
   },
   bottomContainer: {
+    flex: 1,
     alignItems: "left",
     width: "100%",
+    padding: 40,
     paddingVertical: 50,
   },
+  logoContainer:{
+    justifyContent: 'space-between'
+  }
 });
