@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React, { useState } from "react";
+import { HouseContext } from './data/HouseContext';
+import { PersonContext } from "./data/PersonContext";
+import MainNavigator from './navigation/MainNavigator';
 export default function App() {
+  const [clickedHouse, setClickedHouse] = useState('');
+  const [clickedPerson, setClickedPerson] = useState('');
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <HouseContext.Provider value={[clickedHouse, setClickedHouse]}>
+      <PersonContext.Provider value={[clickedPerson, setClickedPerson]}>
+        <MainNavigator />
+      </PersonContext.Provider>
+    </HouseContext.Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
